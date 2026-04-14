@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Bradshaws Farm Shop – Fresh Local Produce, Perton, Wolverhampton</title>
+<meta name="description" content="Bradshaws Farm Shop in Perton, Wolverhampton. Fresh local fruit & veg, artisan produce, strawberry picking, pumpkin picking, Christmas trees, enclosed dog field and an exciting new development coming soon.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;600;700&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1208;--bark:#3D2B1A;--amber:#C47B2B;--amber-light:#E09A4A;
+  --amber-pale:#FBF0DC;--rust:#A84B2A;--rust-light:#C96040;
+  --sage:#6B8C5A;--sage-light:#8AAD76;--sage-pale:#EDF2E9;
+  --cream:#FAF6EE;--warm-white:#FEFCF8;--linen:#F0E8D8;--muted:#8A7060;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--warm-white);color:var(--ink);font-family:'Nunito',sans-serif;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,246,238,0.97);backdrop-filter:blur(12px);border-bottom:2px solid var(--amber);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:70px;}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--bark);letter-spacing:1px;line-height:1;display:block;}
+.nav-brand-sub{font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--muted);display:block;}
+.nav-links{display:flex;gap:30px;list-style:none;align-items:center;}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;transition:color 0.25s;}
+.nav-links a:hover{color:var(--rust);}
+.nav-cta{background:var(--rust)!important;color:#fff!important;padding:9px 22px!important;border-radius:2px;}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--bark);transition:all 0.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-nav{display:none;position:fixed;top:70px;left:0;right:0;z-index:999;background:rgba(250,246,238,0.99);border-bottom:2px solid var(--amber);flex-direction:column;padding:12px 0;}
+.mob-nav.open{display:flex;}
+.mob-nav a{color:var(--bark);text-decoration:none;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:14px 48px;border-bottom:1px solid rgba(61,43,26,0.07);}
+.mob-nav a.mob-cta{color:var(--rust);margin:12px 48px 4px;padding:13px 20px;border:1.5px solid var(--rust);text-align:center;border-radius:2px;border-bottom:1.5px solid var(--rust);}
+
+.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:flex-end;overflow:hidden;padding-top:70px;}
+.hero-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1.2fr 0.8fr 1fr;grid-template-rows:1fr 1fr;gap:3px;}
+.hmi{overflow:hidden;background:var(--linen);}
+.hmi img{width:100%;height:100%;object-fit:cover;}
+.hmi:first-child{grid-row:1/3;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,18,8,0.88) 0%,rgba(28,18,8,0.45) 40%,rgba(28,18,8,0.1) 100%);}
+.hero-overlay-top{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(28,18,8,0.4) 0%,transparent 30%);}
+.hero-content{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:0 48px 70px;}
+.hero-eyebrow{display:inline-flex;align-items:center;background:rgba(196,123,43,0.25);border:1px solid rgba(196,123,43,0.5);padding:6px 18px;margin-bottom:22px;}
+.hero-eyebrow span{font-size:0.62rem;letter-spacing:3px;text-transform:uppercase;color:var(--amber-light);font-weight:700;}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,6.5vw,5.8rem);color:#fff;line-height:1.0;margin-bottom:16px;font-weight:600;}
+.hero-h1 em{color:var(--amber-light);font-style:italic;}
+.hero-tagline{font-family:'Caveat',cursive;font-size:1.5rem;color:rgba(255,255,255,0.75);margin-bottom:36px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-warm{background:var(--amber);color:#fff;padding:14px 30px;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;border:2px solid var(--amber);border-radius:2px;transition:all 0.25s;}
+.btn-warm:hover{background:var(--amber-light);}
+.btn-ghost{background:transparent;color:#fff;padding:14px 30px;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;border:2px solid rgba(255,255,255,0.4);border-radius:2px;transition:all 0.25s;}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
+
+.announce{background:var(--rust);padding:18px 48px;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;text-align:center;}
+.announce p{color:#fff;font-size:0.9rem;font-weight:600;}
+.announce p em{font-style:italic;font-family:'Cormorant Garamond',serif;font-size:1.1rem;}
+.announce a{background:rgba(255,255,255,0.2);color:#fff;font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;padding:8px 20px;text-decoration:none;border-radius:2px;white-space:nowrap;}
+.announce a:hover{background:rgba(255,255,255,0.35);}
+
+.sec{padding:88px 48px;}
+.sec-inner{max-width:1200px;margin:0 auto;}
+.label{font-size:0.62rem;letter-spacing:4px;text-transform:uppercase;color:var(--amber);font-weight:700;display:block;margin-bottom:10px;}
+.label-sage{color:var(--sage);}.label-rust{color:var(--rust);}
+.sec-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--bark);line-height:1.1;margin-bottom:14px;font-weight:600;}
+.sec-h2 em{color:var(--rust);font-style:italic;}
+.divider{width:48px;height:3px;background:var(--amber);margin-bottom:28px;}
+.divider-sage{background:var(--sage);}
+.body-serif{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--bark);line-height:1.85;}
+.handwritten{font-family:'Caveat',cursive;font-size:1.3rem;color:var(--muted);}
+
+.intro-split{display:grid;grid-template-columns:1fr 1fr;background:var(--linen);}
+.intro-text{padding:80px 64px;display:flex;flex-direction:column;justify-content:center;}
+.intro-text p{font-size:0.97rem;color:var(--bark);line-height:1.85;margin-bottom:16px;}
+.intro-photo{position:relative;min-height:500px;overflow:hidden;background:var(--linen);}
+.intro-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+.intro-badge{position:absolute;bottom:28px;left:28px;background:var(--amber);color:#fff;padding:10px 18px;font-family:'Caveat',cursive;font-size:1.2rem;border-radius:2px;}
+
+.photo-strip{display:flex;height:320px;overflow:hidden;gap:3px;}
+.psi{flex:1;overflow:hidden;background:var(--linen);}
+.psi img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;}
+.psi:hover img{transform:scale(1.06);}
+
+.store-sec{background:var(--warm-white);}
+.store-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid rgba(61,43,26,0.1);margin-top:50px;}
+.store-card{padding:36px 32px;border:1px solid rgba(61,43,26,0.08);transition:background 0.3s;}
+.store-card:hover{background:var(--amber-pale);}
+.store-photo{width:100%;aspect-ratio:4/3;overflow:hidden;margin-bottom:18px;background:var(--linen);}
+.store-photo img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.store-card:hover .store-photo img{transform:scale(1.04);}
+.store-card-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:14px;}
+.store-icon{font-size:2rem;line-height:1;flex-shrink:0;margin-top:3px;}
+.store-card h3{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--bark);font-weight:600;}
+.store-card p{font-size:0.88rem;color:var(--muted);line-height:1.75;}
+
+.bento{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:3px;background:var(--bark);}
+.bc{overflow:hidden;position:relative;background:var(--linen);}
+.bc img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;display:block;}
+.bc:hover img{transform:scale(1.05);}
+.bc.tall{grid-row:1/3;}
+.bc.wide{grid-column:2/4;}
+.bc-label{position:absolute;bottom:0;left:0;right:0;padding:24px 16px 14px;background:linear-gradient(transparent,rgba(28,18,8,0.7));font-family:'Caveat',cursive;font-size:1.1rem;color:#fff;opacity:0;transition:opacity 0.3s;}
+.bc:hover .bc-label{opacity:1;}
+
+.seasonal-sec{background:var(--linen);}
+.seasons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:48px;}
+.season-card{background:var(--warm-white);border:1px solid rgba(61,43,26,0.1);overflow:hidden;transition:box-shadow 0.3s,transform 0.3s;}
+.season-card:hover{box-shadow:0 16px 48px rgba(61,43,26,0.12);transform:translateY(-3px);}
+.season-img{height:220px;overflow:hidden;background:var(--linen);}
+.season-img img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s;}
+.season-card:hover .season-img img{transform:scale(1.06);}
+.season-body{padding:28px 28px 32px;}
+.season-tag{display:inline-block;font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--sage);margin-bottom:10px;}
+.season-body h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--bark);margin-bottom:10px;font-weight:600;line-height:1.1;}
+.season-body h3 em{color:var(--rust);font-style:italic;}
+.season-body p{font-size:0.88rem;color:var(--muted);line-height:1.75;}
+.season-card.fs{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;}
+.season-card.fs .season-img{height:auto;min-height:280px;}
+
+.dog-sec{background:var(--sage-pale);}
+.dog-layout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+.dog-photos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:6px;}
+.dp{overflow:hidden;border-radius:2px;background:var(--linen);}
+.dp img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.dp:hover img{transform:scale(1.06);}
+.dp.tall{grid-row:1/3;}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;}
+.tag{background:#fff;border:1.5px solid rgba(107,140,90,0.3);padding:6px 14px;font-size:0.7rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--sage);border-radius:2px;}
+
+.dev-sec{background:var(--bark);}
+.dev-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.dev-features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px;}
+.dev-feat{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);padding:20px 18px;}
+.dev-feat-icon{font-size:1.5rem;margin-bottom:8px;display:block;}
+.dev-feat h4{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#fff;font-weight:600;margin-bottom:4px;}
+.dev-feat p{font-size:0.8rem;color:rgba(250,246,238,0.6);line-height:1.6;}
+.dev-card{background:rgba(255,255,255,0.05);border:1px solid rgba(196,123,43,0.35);padding:40px;position:relative;}
+.dev-card::before{content:'📣';position:absolute;top:-16px;left:32px;font-size:2rem;}
+.dev-card h3{font-family:'Cormorant Garamond',serif;font-size:2rem;color:#fff;margin-bottom:16px;line-height:1.15;}
+.dev-card h3 em{color:var(--amber-light);font-style:italic;}
+.dev-card p{font-size:0.88rem;color:rgba(250,246,238,0.7);line-height:1.8;margin-bottom:16px;}
+.dev-note{background:rgba(196,123,43,0.15);border-left:3px solid var(--amber);padding:14px 16px;font-size:0.82rem;color:rgba(250,246,238,0.8);line-height:1.65;}
+.dev-note strong{color:var(--amber-light);}
+.dev-img{margin-top:16px;overflow:hidden;height:220px;background:var(--linen);}
+.dev-img img{width:100%;height:100%;object-fit:cover;}
+
+.gal{display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:200px 200px;gap:3px;}
+.gc{overflow:hidden;background:var(--linen);}
+.gc img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s;}
+.gc:hover img{transform:scale(1.08);}
+.gc.tall{grid-row:1/3;}
+
+.contact-sec{background:var(--cream);}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+.hours-block{margin-top:24px;}
+.hours-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(61,43,26,0.08);font-size:0.9rem;}
+.hours-row:last-child{border-bottom:none;}
+.hours-row .day-name{color:var(--muted);}
+.hours-row .day-time{font-weight:700;color:var(--bark);}
+.hours-row.today-row .day-name,.hours-row.today-row .day-time{color:var(--rust);}
+.hours-row.today-row{background:rgba(168,75,42,0.05);margin:0 -8px;padding:10px 8px;}
+.contact-item{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid rgba(61,43,26,0.08);}
+.contact-item:last-child{border-bottom:none;}
+.ci-icon{font-size:1.3rem;margin-top:1px;flex-shrink:0;}
+.ci-label{font-size:0.6rem;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:700;margin-bottom:4px;}
+.ci-value{font-size:0.94rem;color:var(--bark);line-height:1.6;}
+.ci-value a{color:var(--rust);text-decoration:none;font-weight:600;}
+.ci-value a:hover{color:var(--amber);}
+.social-row{display:flex;gap:12px;margin-top:24px;}
+.soc-btn{display:flex;align-items:center;gap:8px;background:var(--bark);color:var(--cream);padding:11px 20px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;transition:background 0.25s;border-radius:2px;}
+.soc-btn:hover{background:var(--rust);}
+.map-ph{margin-top:28px;background:var(--linen);border:1px solid rgba(61,43,26,0.12);padding:32px;text-align:center;}
+.map-ph .map-icon{font-size:3rem;margin-bottom:10px;}
+.map-ph p{font-size:0.85rem;color:var(--muted);margin-bottom:14px;}
+.map-ph a{display:inline-block;background:var(--amber);color:#fff;padding:10px 24px;font-size:0.68rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;border-radius:2px;}
+.map-ph a:hover{background:var(--amber-light);}
+.hygiene-bar{display:flex;align-items:center;gap:12px;background:var(--sage-pale);border:1px solid rgba(107,140,90,0.25);padding:14px 18px;margin-top:18px;}
+.hygiene-bar p{font-size:0.82rem;color:var(--bark);}
+.hygiene-bar strong{color:var(--sage);font-weight:700;}
+.contact-img{margin-top:28px;overflow:hidden;height:240px;border-radius:2px;background:var(--linen);}
+.contact-img img{width:100%;height:100%;object-fit:cover;}
+
+footer{background:var(--ink);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;border-top:2px solid var(--amber);flex-wrap:wrap;gap:16px;}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--linen);letter-spacing:1px;}
+.footer-copy{font-size:0.7rem;color:rgba(250,246,238,0.35);}
+.footer-social{display:flex;gap:14px;}
+.footer-social a{color:rgba(250,246,238,0.45);font-size:0.65rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-decoration:none;}
+.footer-social a:hover{color:var(--amber-light);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal.in{opacity:1;transform:none;}
+.reveal-left{opacity:0;transform:translateX(-30px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-left.in{opacity:1;transform:none;}
+.reveal-right{opacity:0;transform:translateX(30px);transition:opacity 0.65s ease,transform 0.65s ease;}
+.reveal-right.in{opacity:1;transform:none;}
+
+@media(max-width:960px){
+  nav{padding:0 20px;}.nav-links{display:none;}.hamburger{display:flex;}
+  .hero-content{padding:0 20px 50px;}
+  .intro-split,.dev-layout,.contact-layout,.dog-layout{grid-template-columns:1fr;}
+  .intro-photo{min-height:300px;}.intro-text{padding:48px 24px;}
+  .sec{padding:60px 20px;}
+  .store-grid{grid-template-columns:1fr 1fr;}
+  .seasons-grid{grid-template-columns:1fr;}
+  .season-card.fs{grid-template-columns:1fr;}
+  .season-card.fs .season-img{min-height:220px;}
+  .dog-layout,.dev-layout,.contact-layout{gap:32px;}
+  .photo-strip{height:200px;}
+  .bento{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px;}
+  .bc.tall{grid-row:auto;}.bc.wide{grid-column:1/3;}
+  .gal{grid-template-columns:repeat(3,1fr);grid-template-rows:160px 160px;}
+  .gc.tall{grid-row:auto;}
+  footer{flex-direction:column;text-align:center;padding:24px 20px;}
+  .announce{padding:14px 20px;}
+}
+@media(max-width:580px){
+  .hero-h1{font-size:2.6rem;}.hero-btns{flex-direction:column;}
+  .store-grid{grid-template-columns:1fr;}.dev-features{grid-template-columns:1fr;}
+  .dog-photos{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px;}
+  .dp.tall{grid-row:auto;}
+  .gal{grid-template-columns:repeat(2,1fr);grid-template-rows:140px 140px 140px;}
+  .social-row{flex-direction:column;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-brand">
+    <span class="nav-brand-text">
+      <span class="nav-brand-name">🌿 Bradshaws Farm Shop</span>
+      <span class="nav-brand-sub">Perton · Wolverhampton</span>
+    </span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#shop">The Shop</a></li>
+    <li><a href="#seasonal">Seasonal</a></li>
+    <li><a href="#dogs">Dog Field</a></li>
+    <li><a href="#development">Exciting News</a></li>
+    <li><a href="#contact" class="nav-cta">Visit Us</a></li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-nav" id="mobnav">
+  <a href="#shop">The Shop</a>
+  <a href="#seasonal">Seasonal Events</a>
+  <a href="#dogs">Dog Field</a>
+  <a href="#development">Exciting News</a>
+  <a href="#contact" class="mob-cta">Visit Us</a>
+</div>
+
+<section class="hero">
+  <div class="hero-mosaic">
+    <div class="hmi"><img src="images/img 9.jpg" alt="Inside the farm shop"></div>
+    <div class="hmi"><img src="images/img 8.jpg" alt="Rainbow carrots"></div>
+    <div class="hmi"><img src="images/img 6.jpg" alt="Bradshaws exterior"></div>
+    <div class="hmi"><img src="images/img 4.jpg" alt="Shop interior"></div>
+    <div class="hmi"><img src="images/img 11.jpg" alt="Fresh fruit"></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-top"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span>Perton · Wolverhampton · Est. 35+ Years</span></div>
+    <h1 class="hero-h1">Your Favourite<br><em>Farm Shop</em><br>is Back — Better<br>Than Ever.</h1>
+    <p class="hero-tagline">Fresh produce, real food, warm welcome — every single day.</p>
+    <div class="hero-btns">
+      <a href="#shop" class="btn-warm">Explore the Shop</a>
+      <a href="#development" class="btn-ghost">Our Exciting News ✨</a>
+    </div>
+  </div>
+</section>
+
+<div class="announce">
+  <p>🚧 <em>Big news!</em> Planning approved for a brand new farm shop, café, padel courts &amp; more.</p>
+  <a href="#development">See What's Coming →</a>
+</div>
+
+<div class="intro-split">
+  <div class="intro-text reveal-left">
+    <span class="label">About Us</span>
+    <h2 class="sec-h2">Rooted in Perton.<br><em>Loved by Locals.</em></h2>
+    <div class="divider"></div>
+    <p class="body-serif">For over 35 years, Bradshaws has been the beating heart of Perton's community. We're an independent farm shop stocking the freshest fruit and vegetables, quality meats, artisan produce and local bakery goods — all under the warm wooden roof that our customers know and love.</p>
+    <p style="font-size:0.9rem;color:var(--muted);line-height:1.8;margin-top:8px;">We care deeply about what we stock and where it comes from. Walk in and you'll immediately feel the difference — this is shopping as it should be.</p>
+    <div style="margin-top:28px;"><span class="handwritten">"The friendliest shop in Perton — always fresh, always welcoming."</span></div>
+  </div>
+  <div class="intro-photo reveal-right">
+    <img src="images/img 5.jpg" alt="Bradshaws team with food hygiene rating">
+    <div class="intro-badge">⭐ Food Hygiene Rated 5</div>
+  </div>
+</div>
+
+<div class="photo-strip">
+  <div class="psi"><img src="images/img 1.jpg" alt="Artisan nut butters"></div>
+  <div class="psi"><img src="images/img 3.jpg" alt="Pickles and preserves"></div>
+  <div class="psi"><img src="images/img 8.jpg" alt="Rainbow carrots"></div>
+  <div class="psi"><img src="images/img 12.jpg" alt="Homemade pies"></div>
+  <div class="psi"><img src="images/img 9.jpg" alt="Bakery display"></div>
+</div>
+
+<section class="store-sec sec" id="shop">
+  <div class="sec-inner">
+    <span class="label">What We Stock</span>
+    <h2 class="sec-h2">A Proper Shop,<br><em>Full of Good Things</em></h2>
+    <div class="divider"></div>
+    <p class="body-serif" style="max-width:580px;">From rainbow carrots pulled that morning to award-winning artisan preserves, homemade pies and locally baked breads — there is always something worth discovering at Bradshaws.</p>
+    <div class="store-grid">
+      <div class="store-card reveal">
+        <div class="store-photo"><img src="images/img 11.jpg" alt="Fresh fruit display"></div>
+        <div class="store-card-top"><span class="store-icon">🍎</span><h3>Fruit &amp; Vegetables</h3></div>
+        <p>Sourced fresh every day. From seasonal British favourites to exotic fruits and heritage vegetables — colourful, vibrant and always at their best.</p>
+      </div>
+      <div class="store-card reveal">
+        <div class="store-photo"><img src="images/img 12.jpg" alt="Homemade pies"></div>
+        <div class="store-card-top"><span class="store-icon">🥩</span><h3>Butchery &amp; Pies</h3></div>
+        <p>Quality meats and freshly made homemade pies. Our chilled counter is a proper local institution — the kind of food that makes a real difference at dinnertime.</p>
+      </div>
+      <div class="store-card reveal">
+        <div class="store-photo"><img src="images/img 9.jpg" alt="Artisan bakery breads"></div>
+        <div class="store-card-top"><span class="store-icon">🍞</span><h3>Artisan Bakery</h3></div>
+        <p>Freshly baked sourdoughs, loaves, pastries and seasonal treats from trusted local bakers. There's always something warm and wonderful to take home.</p>
+      </div>
+      <div class="store-card reveal">
+        <div class="store-photo"><img src="images/img 21.jpg" alt="Coffee counter"></div>
+        <div class="store-card-top"><span class="store-icon">☕</span><h3>Coffee &amp; Hot Drinks</h3></div>
+        <p>Grab a proper coffee while you shop. Lattes, cappuccinos, flat whites, hot chocolate — made fresh in-store. The perfect start to a Saturday morning browse.</p>
+      </div>
+      <div class="store-card reveal">
+        <div class="store-photo"><img src="images/img 1.jpg" alt="Specialty artisan produce"></div>
+        <div class="store-card-top"><span class="store-icon">🫙</span><h3>Artisan &amp; Specialty</h3></div>
+        <p>Carefully chosen shelves of award-winning jams, pickles, nut butters, organic teas, craft drinks, gluten-free ranges, candles, fresh flowers and much more.</p>
+      </div>
+      <div class="store-card reveal">
+        <div class="store-photo"><img src="images/img 10.jpg" alt="Deli counter with eggs and wine"></div>
+        <div class="store-card-top"><span class="store-icon">🥚</span><h3>Deli, Eggs &amp; Wine</h3></div>
+        <p>Free-range eggs, quality wines, local cheeses and deli staples. Everything you need for a proper weekend — all chosen with care, all under one roof.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bento">
+  <div class="bc tall"><img src="images/img 10.jpg" alt="Shop interior"><div class="bc-label">The Shop</div></div>
+  <div class="bc"><img src="images/img 2.jpg" alt="Northern Pasta Co"><div class="bc-label">Artisan Brands</div></div>
+  <div class="bc"><img src="images/img 13.jpg" alt="Pukka teas"><div class="bc-label">Organic Range</div></div>
+  <div class="bc wide"><img src="images/img 7.jpg" alt="Christmas trees outside"><div class="bc-label">Christmas Trees</div></div>
+</div>
+
+<section class="seasonal-sec sec" id="seasonal">
+  <div class="sec-inner">
+    <span class="label label-sage">Throughout the Year</span>
+    <h2 class="sec-h2">Seasons Worth<br><em>Looking Forward To</em></h2>
+    <div class="divider divider-sage"></div>
+    <p class="body-serif" style="max-width:600px;">Each season brings something special. From strawberry picking on a warm summer morning to choosing your perfect pumpkin in October — these are the moments that bring Perton families back year after year.</p>
+    <div class="seasons-grid">
+      <div class="season-card reveal">
+        <div class="season-img"><img src="images/img 23.jpg" alt="Strawberry picking"></div>
+        <div class="season-body">
+          <span class="season-tag">Summer</span>
+          <h3>Strawberry<br><em>Picking</em></h3>
+          <p>Pick your own sun-warmed strawberries straight from the patch. A beloved Bradshaws tradition — the taste of a proper British summer, picked by you.</p>
+        </div>
+      </div>
+      <div class="season-card reveal">
+        <div class="season-img"><img src="images/img 6.jpg" alt="Pumpkin picking autumn"></div>
+        <div class="season-body">
+          <span class="season-tag">Autumn · October</span>
+          <h3>Pumpkin<br><em>Picking</em></h3>
+          <p>Our famous October pumpkin picking event. Classic orange, white ghost, warty and mini varieties — a highlight of the Perton calendar every single year.</p>
+        </div>
+      </div>
+      <div class="season-card fs reveal">
+        <div class="season-img"><img src="images/img 4.jpg" alt="Christmas trees festive"></div>
+        <div class="season-body">
+          <span class="season-tag">November – December</span>
+          <h3>Christmas Trees<br><em>&amp; Festive Produce</em></h3>
+          <p>Real Christmas trees arriving each November, alongside beautiful wreaths, seasonal fruit and veg, and everything needed for a proper family Christmas from a shop that genuinely cares. It's the most magical time of year at Bradshaws.</p>
+        </div>
+      </div>
+      <div class="season-card reveal">
+        <div class="season-img"><img src="images/img 15.jpg" alt="Cosy winter treats"></div>
+        <div class="season-body">
+          <span class="season-tag">Winter</span>
+          <h3>Cosy Season<br><em>Treats</em></h3>
+          <p>Firewood bags, warming pantry staples, festive bakes and everything that makes staying in feel special when the nights draw in.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-strip">
+  <div class="psi"><img src="images/img 18.jpg" alt="Gluten free section"></div>
+  <div class="psi"><img src="images/img 16.jpg" alt="Peroni bottles"></div>
+  <div class="psi"><img src="images/img 17.jpg" alt="Forest Feast snacks"></div>
+  <div class="psi"><img src="images/img 14.jpg" alt="Chocolate cookies"></div>
+  <div class="psi"><img src="images/img 22.jpg" alt="Shop counter flowers"></div>
+</div>
+
+<section class="dog-sec sec" id="dogs">
+  <div class="sec-inner">
+    <div class="dog-layout">
+      <div class="reveal-left">
+        <span class="label label-sage">Dog Friendly</span>
+        <h2 class="sec-h2">The Enclosed<br><em>Dog Field</em></h2>
+        <div class="divider divider-sage"></div>
+        <p class="body-serif">Our brand new, fully enclosed dog field is a proper treat for four-legged visitors and their owners alike. Let your dog run free in a safe, secure space while you grab a coffee and enjoy the shop — no leads, no stress, just happy dogs.</p>
+        <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-top:14px;">A welcome new addition to Bradshaws — and a big hit with the Perton dog-walking community since day one.</p>
+        <div class="tags">
+          <span class="tag">Fully Enclosed</span>
+          <span class="tag">All Sizes Welcome</span>
+          <span class="tag">Brand New</span>
+          <span class="tag">Free to Use</span>
+          <span class="tag">On-Site Parking</span>
+          <span class="tag">Coffee On-Site</span>
+        </div>
+      </div>
+      <div class="dog-photos reveal-right">
+        <div class="dp tall"><img src="images/Dogs on a log.jpg" alt="Seven dogs on a log at Bradshaws dog field"></div>
+        <div class="dp"><img src="images/Whole feild wide angle.jpg" alt="Wide view of Bradshaws dog field"></div>
+        <div class="dp"><img src="images/Dog in tyer.jpg" alt="Happy dog in tyre at Bradshaws dog field"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dev-sec sec" id="development">
+  <div class="sec-inner">
+    <div class="dev-layout">
+      <div class="reveal-left">
+        <span class="label">Big News From Bradshaws</span>
+        <h2 class="sec-h2" style="color:#fff;">Something<br><em style="color:var(--amber-light);">Incredible</em><br>Is Coming.</h2>
+        <div class="divider"></div>
+        <p class="body-serif" style="color:rgba(250,246,238,0.75);">Planning permission has been approved for a full redevelopment of the Bradshaws site. The existing shop closed on 19th April 2025 — and what comes next is going to be something really special for Perton.</p>
+        <div class="dev-features">
+          <div class="dev-feat"><span class="dev-feat-icon">🏪</span><h4>New Farm Shop</h4><p>A brand new purpose-built space. Same heart, fresh new home.</p></div>
+          <div class="dev-feat"><span class="dev-feat-icon">☕</span><h4>Café</h4><p>A proper sit-down café with quality food and drink.</p></div>
+          <div class="dev-feat"><span class="dev-feat-icon">🎾</span><h4>Padel Courts</h4><p>Brand new padel courts — one of the UK's fastest growing sports.</p></div>
+          <div class="dev-feat"><span class="dev-feat-icon">🏡</span><h4>Clubhouse</h4><p>A beautiful clubhouse for the whole community to enjoy.</p></div>
+          <div class="dev-feat"><span class="dev-feat-icon">🐕</span><h4>Dog Field</h4><p>The enclosed dog field continues as part of the new site.</p></div>
+          <div class="dev-feat"><span class="dev-feat-icon">🛍️</span><h4>Retail Unit</h4><p>One unit still available — contact us if you're interested.</p></div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="dev-card">
+          <h3>Watch<br><em>This Space.</em></h3>
+          <p>We're rebuilding from the ground up and we cannot wait to share the finished result with the community that has supported us for over 35 years.</p>
+          <p>Follow us on Facebook and Instagram for all the latest updates, behind-the-scenes progress and the big reopening announcement.</p>
+          <div class="dev-note">📍 <strong>Wrottesley Park Road, Perton, WV6 7HL</strong><br>Follow the journey on Instagram &amp; Facebook: <strong>@bradshaws.farmshop</strong></div>
+        </div>
+        <div class="dev-img"><img src="images/img 6.jpg" alt="Bradshaws exterior"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gal">
+  <div class="gc tall"><img src="images/img 9.jpg" alt="Shop interior bakery"></div>
+  <div class="gc"><img src="images/img 13.jpg" alt="Pukka teas shelf"></div>
+  <div class="gc"><img src="images/img 3.jpg" alt="Preserves"></div>
+  <div class="gc"><img src="images/img 17.jpg" alt="Forest feast snacks"></div>
+  <div class="gc"><img src="images/img 2.jpg" alt="Northern Pasta Co"></div>
+  <div class="gc"><img src="images/img 16.jpg" alt="Peroni bottles"></div>
+  <div class="gc"><img src="images/img 18.jpg" alt="Gluten free"></div>
+  <div class="gc"><img src="images/img 15.jpg" alt="Gingerbread men"></div>
+</div>
+
+<section class="contact-sec sec" id="contact">
+  <div class="sec-inner">
+    <div class="contact-layout">
+      <div class="reveal-left">
+        <span class="label label-rust">Find Us</span>
+        <h2 class="sec-h2">Come &amp; <em>Visit Us</em></h2>
+        <div class="divider" style="background:var(--rust);"></div>
+        <div class="contact-item">
+          <span class="ci-icon">📍</span>
+          <div><div class="ci-label">Address</div><div class="ci-value">Wrottesley Park Road<br>Perton, Wolverhampton<br>WV6 7HL</div></div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">📞</span>
+          <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:01902844064">01902 844064</a></div></div>
+        </div>
+        <div class="contact-item">
+          <span class="ci-icon">✉️</span>
+          <div><div class="ci-label">Email</div><div class="ci-value"><a href="mailto:jess@bradshawsestates.com">jess@bradshawsestates.com</a></div></div>
+        </div>
+        <div class="social-row">
+          <a href="https://www.instagram.com/bradshaws.farmshop" target="_blank" class="soc-btn">📸 Instagram</a>
+          <a href="https://www.facebook.com/profile.php/?id=61582607764225" target="_blank" class="soc-btn">👥 Facebook</a>
+        </div>
+        <div class="hygiene-bar">
+          <span>🏆</span>
+          <p>Awarded <strong>Food Hygiene Rating 5 — Very Good</strong> by the Food Standards Agency.</p>
+        </div>
+        <div class="map-ph">
+          <div class="map-icon">🗺️</div>
+          <p>Wrottesley Park Road, Perton, Wolverhampton, WV6 7HL</p>
+          <a href="https://maps.google.com/?q=Bradshaws+Farm+Shop+Perton+Wolverhampton" target="_blank">Get Directions →</a>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <span class="label">Opening Hours</span>
+        <h2 class="sec-h2">When We're <em>Open</em></h2>
+        <div class="divider"></div>
+        <p style="font-size:0.82rem;color:var(--muted);font-style:italic;margin-bottom:4px;">ℹ️ The shop is currently closed for our exciting redevelopment. Follow us on social media for our reopening date!</p>
+        <div class="hours-block" id="hours-block">
+          <div class="hours-row" data-day="Monday"><span class="day-name">Monday</span><span class="day-time">8:00am – 4:30pm</span></div>
+          <div class="hours-row" data-day="Tuesday"><span class="day-name">Tuesday</span><span class="day-time">8:00am – 4:30pm</span></div>
+          <div class="hours-row" data-day="Wednesday"><span class="day-name">Wednesday</span><span class="day-time">8:00am – 4:30pm</span></div>
+          <div class="hours-row" data-day="Thursday"><span class="day-name">Thursday</span><span class="day-time">8:00am – 4:30pm</span></div>
+          <div class="hours-row" data-day="Friday"><span class="day-name">Friday</span><span class="day-time">8:00am – 4:30pm</span></div>
+          <div class="hours-row" data-day="Saturday"><span class="day-name">Saturday</span><span class="day-time">8:00am – 4:30pm</span></div>
+          <div class="hours-row" data-day="Sunday"><span class="day-name">Sunday</span><span class="day-time">10:00am – 3:30pm</span></div>
+        </div>
+        <div class="contact-img"><img src="images/img 7.jpg" alt="Brussels sprouts and Christmas trees outside"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">🌿 Bradshaws Farm Shop · Perton</div>
+  <div class="footer-copy">© 2025 Bradshaws Farm Shop · Wrottesley Park Road · Perton · WV6 7HL</div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/bradshaws.farmshop" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/profile.php/?id=61582607764225" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+<script>
+const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const todayName=days[new Date().getDay()];
+document.querySelectorAll('.hours-row').forEach(row=>{
+  if(row.dataset.day===todayName){
+    row.classList.add('today-row');
+    row.querySelector('.day-name').textContent+=' (Today)';
+  }
+});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const href=a.getAttribute('href');
+    if(href==='#')return;
+    e.preventDefault();
+    const t=document.querySelector(href);
+    if(t)t.scrollIntoView({behavior:'smooth',block:'start'});
+    document.getElementById('mobnav').classList.remove('open');
+    document.getElementById('ham').classList.remove('open');
+    document.body.style.overflow='';
+  });
+});
+const ham=document.getElementById('ham');
+const mobnav=document.getElementById('mobnav');
+ham.addEventListener('click',()=>{
+  ham.classList.toggle('open');
+  mobnav.classList.toggle('open');
+  document.body.style.overflow=mobnav.classList.contains('open')?'hidden':'';
+});
+window.addEventListener('scroll',()=>{
+  if(mobnav.classList.contains('open')){
+    mobnav.classList.remove('open');
+    ham.classList.remove('open');
+    document.body.style.overflow='';
+  }
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});
+},{threshold:0.08});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
